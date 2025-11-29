@@ -3,6 +3,7 @@ import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
@@ -56,6 +57,26 @@ topPanel.add(initialPositionsField);
 
 topPanel.add(encryptButton);
 topPanel.add(decryptButton);
+
+//input box 
+JPanel inputPanel = new JPanel(new BorderLayout());
+inputPanel.add(new JLabel("Input"), BorderLayout.NORTH);
+inputPanel.add(new JScrollPane(inputArea), BorderLayout.CENTER);
+
+
+//output box 
+JPanel outputPanel = new JPanel(new BorderLayout());
+outputPanel.add(new JLabel("Output"), BorderLayout.NORTH);
+outputPanel.add(new JScrollPane(outputArea), BorderLayout.CENTER);
+
+
+//putting everything together
+setLayout(new BorderLayout());
+
+add(topPanel, BorderLayout.NORTH); //top panel 
+add(inputPanel, BorderLayout.CENTER); //input panel 
+add(outputPanel, BorderLayout.SOUTH); //output panel 
+
     }
 
 }
