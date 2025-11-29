@@ -1,6 +1,8 @@
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
@@ -18,5 +20,42 @@ private JButton decryptButton;
 private JTextArea inputArea;
 private JTextArea outputArea;
 
+
+public EnigmaFrame() {
+       
+Integer[] rotorChoices = {1, 2, 3, 4, 5};
+
+innerCombo  = new JComboBox<>(rotorChoices);
+middleCombo = new JComboBox<>(rotorChoices);
+outerCombo  = new JComboBox<>(rotorChoices);
+
+initialPositionsField = new JTextField("", 3);
+
+encryptButton = new JButton("Encrypt");
+decryptButton = new JButton("Decrypt");
+
+inputArea = new JTextArea(4, 40);
+outputArea = new JTextArea(4, 40);
+outputArea.setEditable(false);
+
+
+//top part
+JPanel topPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+
+topPanel.add(new JLabel("Inner"));
+topPanel.add(innerCombo);
+
+topPanel.add(new JLabel("Middle"));
+topPanel.add(middleCombo);
+
+topPanel.add(new JLabel("Out"));
+topPanel.add(outerCombo);
+
+topPanel.add(new JLabel("Initial Positions"));
+topPanel.add(initialPositionsField);
+
+topPanel.add(encryptButton);
+topPanel.add(decryptButton);
+    }
 
 }
