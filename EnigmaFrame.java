@@ -77,6 +77,24 @@ add(topPanel, BorderLayout.NORTH); //top panel
 add(inputPanel, BorderLayout.CENTER); //input panel 
 add(outputPanel, BorderLayout.SOUTH); //output panel 
 
+
+//listners 
+EnigmaActionListener a = new EnigmaActionListener();
+encryptButton.addActionListener(a);
+decryptButton.addActionListener(a);
+
+pack();
+
     }
+
+private class EnigmaActionListener implements ActionListener {
+    public void actionPerformed(ActionEvent e) {
+
+
+
+
+    }
+}
+
 
 }
